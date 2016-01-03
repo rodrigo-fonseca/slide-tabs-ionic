@@ -1,5 +1,5 @@
 # slide-tabs-ionic (simple slide tabs for ionic)
-Ionic version: 1.2.4;
+Ionic version >= 1.2.0;
 
 [DEMO](https://cdn.rawgit.com/rodrigo-fonseca/slide-tabs-ionic/master/www/index.html#/dashboard)
 
