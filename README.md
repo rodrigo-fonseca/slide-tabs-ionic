@@ -214,14 +214,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 .scroll{
 	height:100%;
 }
+.scroll-content {
+	margin-bottom: 42px;
+}
 .swiper-pagination {
 	display: none;
 }
 .swiper-container {
 	overflow-x:hidden;
 	overflow-y:scroll;
-}
-.scroll-content {
-	margin-bottom: 42px;
 }
 ```
