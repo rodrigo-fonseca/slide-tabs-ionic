@@ -3,7 +3,7 @@ Ionic version: 1.2.4;
 
 [DEMO](https://cdn.rawgit.com/rodrigo-fonseca/slide-tabs-ionic/master/www/index.html#/dashboard)
 
-I made this based on Ionic Starter App (ionic start myApp tabs) from here: http://ionicframework.com/getting-started/
+I made this using [Swiper API](http://www.idangero.us/swiper/#.Vomtkry0mOM) based on Ionic Starter App (ionic start myApp tabs) from here: http://ionicframework.com/getting-started/
  <br> 
  All you have to do is get this example and change these files below:
   - js/app.js
