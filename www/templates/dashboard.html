@@ -1,0 +1,80 @@
+<ion-view view-title="Dashboard">
+  <div class="tabs tabs-icon-only">
+      <a class="tab-item" 
+         data-ng-class="{active: dashboard.activeIndexView === 0}" 
+         data-ng-click="dashboard.slideTo(0)">
+          <i class="icon ion-ios-pulse-strong" data-ng-show="dashboard.activeIndexView === 0"></i>
+          <i class="icon ion-ios-pulse" data-ng-show="dashboard.activeIndexView !== 0"></i>
+      </a>
+      <a class="tab-item" 
+         data-ng-class="{active: dashboard.activeIndexView === 1}"
+         data-ng-click="dashboard.slideTo(1)">
+          <i class="icon ion-ios-chatboxes" data-ng-show="dashboard.activeIndexView === 1"></i>
+          <i class="icon ion-ios-chatboxes-outline" data-ng-show="dashboard.activeIndexView !== 1"></i>
+      </a>
+      <a class="tab-item" 
+         data-ng-class="{active: dashboard.activeIndexView === 2}"
+         data-ng-click="dashboard.slideTo(2)">
+          <i class="icon ion-ios-gear" data-ng-show="dashboard.activeIndexView === 2"></i>
+          <i class="icon ion-ios-gear-outline" data-ng-show="dashboard.activeIndexView !== 2"></i>
+      </a>
+  </div>  
+
+  <ion-content class="padding">
+    <ion-slides options="{keyboardControl: true, initialSlide: 0}" slider="dashboard.slider">
+      <!-- status view -->
+      <ion-slide-page>
+        <div class="list card" data-ng-controller="DashCtrl">
+          <div class="item item-divider">Recent Updates</div>
+          <div class="item item-body">
+            <div>
+              There is a fire in <b>sector 3</b>
+            </div>
+          </div>
+        </div>
+        <div class="list card">
+          <div class="item item-divider">Health</div>
+          <div class="item item-body">
+            <div>
+              You ate an apple today!
+            </div>
+          </div>
+        </div>
+        <div class="list card">
+          <div class="item item-divider">Upcoming</div>
+          <div class="item item-body">
+            <div>
+              You have <b>29</b> meetings on your calendar tomorrow.
+            </div>
+          </div>
+        </div>
+      </ion-slide-page>
+
+      <!-- chat view -->
+      <ion-slide-page>
+        <ion-list data-ng-controller="ChatsCtrl">
+          <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/chats/{{chat.id}}">
+            <img ng-src="{{chat.face}}">
+            <h2>{{chat.name}}</h2>
+            <p>{{chat.lastText}}</p>
+            <i class="icon ion-chevron-right icon-accessory"></i>
+
+            <ion-option-button class="button-assertive" ng-click="remove(chat)">
+              Delete
+            </ion-option-button>
+          </ion-item>
+        </ion-list>
+      </ion-slide-page>
+
+      <!-- account view -->
+      <ion-slide-page>
+        <ion-list data-ng-controller="AccountCtrl">
+          <ion-toggle  ng-model="settings.enableFriends">
+              Enable Friends
+          </ion-toggle>
+        </ion-list>
+      </ion-slide-page>
+
+    </ion-slides>
+  </ion-content>
+</ion-view>

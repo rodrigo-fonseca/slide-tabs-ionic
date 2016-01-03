@@ -1,0 +1,14 @@
+/* Empty. Add your own CSS if you like */
+.scroll{
+	height:100%;
+}
+.swiper-pagination {
+	display: none;
+}
+.swiper-container {
+	overflow-x:hidden;
+	overflow-y:scroll;
+}
+.scroll-content {
+	margin-bottom: 42px;
+}
