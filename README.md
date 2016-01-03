@@ -1,5 +1,7 @@
 # slide-tabs-ionic (simple slide tabs for ionic)
 
+[DEMO](https://cdn.rawgit.com/rodrigo-fonseca/slide-tabs-ionic/master/www/index.html#/dashboard)
+
 I made this based on Ionic Starter App (ionic start myApp tabs) from here: http://ionicframework.com/getting-started/
  <br> All you have to do is get this example and change this files like below:
   - js/app.js
