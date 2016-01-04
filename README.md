@@ -103,29 +103,8 @@ And add this:
 </ion-view>
 ```
 
-- Controllers (js/controllers.js)
+- Insert DashboardController (js/controllers.js)
 ```javascript
-angular.module('starter.controllers', [])
-
-.controller('DashCtrl', function($scope) {})
-
-.controller('ChatsCtrl', function($scope, Chats) {
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
-})
-
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
-
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-})
-
 .controller('DashboardController', function ($scope, $timeout) {                          
   $scope.dashboard = {swiper: false, slider: false, activeIndexView: 0};
   $scope.dashboard.slideTo = function (indexSlide) {
@@ -155,7 +134,7 @@ angular.module('starter.controllers', [])
 });
 ```
 
-- Modules (js/app.js)
+- Change your states like this below (js/app.js)
 
 ```javascript
 // Ionic Starter App
@@ -166,22 +145,6 @@ angular.module('starter.controllers', [])
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
-
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-    // for form inputs)
-    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
-
-    }
-    if (window.StatusBar) {
-      // org.apache.cordova.statusbar required
-      StatusBar.styleDefault();
-    }
-  });
-})
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -208,7 +171,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 });
 ```
 
-- Stye (css/style.css)
+- And add this to your style (css/style.css)
 
 ```css
 .scroll{
