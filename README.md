@@ -15,7 +15,7 @@ And add this:
   - templates/dashboard.html
  
 <br>
-- Insert slide for every section (templates/dashboard.html)
+- Insert slide for every section (status, chat and account view) (templates/dashboard.html)
 
 ```html
 <ion-view view-title="Dashboard">
