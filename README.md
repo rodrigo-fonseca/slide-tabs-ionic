@@ -123,6 +123,11 @@ And add this:
           });
       }
   });
+
+  $scope.dashboard.slideTo = function (indexSlide) {
+    $scope.swiper.slideTo(indexSlide);
+  };
+});
 ```
 
 - Change your states like this below (js/app.js)
