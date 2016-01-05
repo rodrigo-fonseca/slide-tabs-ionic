@@ -105,22 +105,14 @@ And add this:
 
 - Insert DashboardController (js/controllers.js)
 ```javascript
-.controller('DashboardController', function ($scope, $timeout) {                          
+.controller('DashboardController', function ($scope) {                          
   $scope.dashboard = {swiper: false, slider: false, activeIndexView: 0};
-  $scope.dashboard.slideTo = function (indexSlide) {
-      $scope.slideTo(indexSlide);
-  };
-
-  $scope.slideTo = function (indexSlide) {
-      $scope.swiper.slideTo(indexSlide);
-  }
               
   $scope.$watch('dashboard.slider', function (swiper) {
       if (swiper) {
           $scope.swiper = swiper;
           
           swiper.on('onSlideChangeStart', function (swiper) {
-              $scope.dashboard.activeIndexView = swiper.snapIndex;
               if(!$scope.$$phase) {
                   $scope.$apply(function () {
                        $scope.dashboard.activeIndexView = swiper.snapIndex;   
@@ -131,7 +123,6 @@ And add this:
           });
       }
   });
-});
 ```
 
 - Change your states like this below (js/app.js)
