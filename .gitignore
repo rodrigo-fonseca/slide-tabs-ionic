@@ -1,0 +1,7 @@
+.DS_Store
+hooks
+node_modules
+config.xml
+gulpfile.js
+ionic.config.json
+package.json

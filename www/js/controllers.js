@@ -27,26 +27,33 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('DashboardController', function ($scope) {                          
-  $scope.dashboard = {swiper: false, slider: false, activeIndexView: 0};
-              
-  $scope.$watch('dashboard.slider', function (swiper) {
-      if (swiper) {
-          $scope.swiper = swiper;
-          
-          swiper.on('onSlideChangeStart', function (swiper) {
-              if(!$scope.$$phase) {
-                  $scope.$apply(function () {
-                       $scope.dashboard.activeIndexView = swiper.snapIndex;   
-                  }); 
-              } else {
-                  $scope.dashboard.activeIndexView = swiper.snapIndex;
-              }
-          });
-      }
-  });
+.controller('DashboardController', function ($scope) {
+    var that = this;
 
-  $scope.dashboard.slideTo = function (indexSlide) {
-    $scope.swiper.slideTo(indexSlide);
-  };
+    this.dashboard = {swiper: false, slider: false, activeIndexView: 0};
+    $scope.$on("$ionicSlides.sliderInitialized", function(event, data) {
+        if (!data || !data.slider) {
+            return;
+        }
+
+        that.swiper = data.slider;
+    });
+
+    $scope.$on("$ionicSlides.slideChangeStart", function (event, data) {
+        if (!data || !data.slider || !data.slider.snapIndex < 0) {
+            return;
+        }
+
+        if(!$scope.$$phase) {
+            $scope.$apply(function () {
+                that.dashboard.activeIndexView = data.slider.snapIndex;
+            });
+        } else {
+            that.dashboard.activeIndexView = data.slider.snapIndex;
+        }
+    });
+
+    this.dashboard.slideTo = function (indexSlide) {
+        that.swiper.slideTo(indexSlide);
+    };
 });

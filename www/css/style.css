@@ -1,4 +1,3 @@
-/* Empty. Add your own CSS if you like */
 .scroll{
 	height:100%;
 }
@@ -11,4 +10,13 @@
 }
 .scroll-content {
 	margin-bottom: 42px;
+}
+
+.tab-item {
+	opacity:0.5;
+	-moz-opacity: 0.5;
+	filter: alpha(opacity=0.5);
+}
+.tab-item.tab-item-active i, .tab-item.active i, .tab-item.activated i {
+    color: #444444 !important;
 }

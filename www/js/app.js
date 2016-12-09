@@ -34,7 +34,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('dashboard', {
     url: '/dashboard',
     templateUrl: 'templates/dashboard.html',
-    controller: 'DashboardController'
+    controller: 'DashboardController as vm'
   })
   .state('chat-detail', {
     url: '/chats/:chatId',
